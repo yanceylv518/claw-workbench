@@ -7,8 +7,8 @@ $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
 $outputRoot = Join-Path $root $OutputDir
-$stage = Join-Path $outputRoot "openclaw-xiaolongxia"
-$upgradeStage = Join-Path $outputRoot "openclaw-xiaolongxia-overlay-upgrade"
+$stage = Join-Path $outputRoot "claw-workbench"
+$upgradeStage = Join-Path $outputRoot "claw-workbench-overlay-upgrade"
 $versionConfig = Get-Content -Raw (Join-Path $root "VERSION.json") | ConvertFrom-Json
 $productVersion = $versionConfig.version
 $productNameZh = -join @([char]0x5C0F, [char]0x9F99, [char]0x867E, [char]0x672C, [char]0x5730, [char]0x7248)
@@ -69,7 +69,7 @@ function Write-PackageManifest($targetRoot, $packageKind) {
     Sort-Object { $_.path }
 
   Write-Utf8NoBomJson (Join-Path $targetRoot "version.json") ([ordered]@{
-    product = "openclaw-xiaolongxia"
+    product = "claw-workbench"
     name = $productNameZh
     version = $version
     packageKind = $packageKind
@@ -77,7 +77,7 @@ function Write-PackageManifest($targetRoot, $packageKind) {
   }) 5
 
   Write-Utf8NoBomJson (Join-Path $targetRoot "manifest.json") ([ordered]@{
-    product = "openclaw-xiaolongxia"
+    product = "claw-workbench"
     version = $version
     packageKind = $packageKind
     builtAt = $builtAt

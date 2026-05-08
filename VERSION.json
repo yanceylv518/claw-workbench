@@ -1,6 +1,6 @@
 {
-  "product": "openclaw-xiaolongxia",
-  "name": "小龙虾本地版",
+  "product": "claw-workbench",
+  "name": "小龙虾工作台",
   "version": "0.1.0",
   "releaseName": "第一个本地交付版本",
   "releaseDate": "2026-05-09",

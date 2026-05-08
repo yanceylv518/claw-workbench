@@ -17,7 +17,7 @@ function runtimeSummary() {
   const runDir = wrongPattern.test(cwd) ? cwd : root;
   const suggestedDir = runDir
     .replace(/-覆盖升级包$/i, "")
-    .replace(/\\(?:xiaolongxia|openclaw-xiaolongxia)-overlay-upgrade$/i, "\\openclaw-xiaolongxia");
+    .replace(/\\(?:xiaolongxia|openclaw-xiaolongxia|claw-workbench)-overlay-upgrade$/i, "\\claw-workbench");
   return {
     cwd,
     root,
