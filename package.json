@@ -1,0 +1,25 @@
+{
+  "name": "xiaolongxia-local",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "console": "node console-server.mjs",
+    "api:local": "node apps/api/local-server.mjs",
+    "hermes-worker": "node apps/hermes-worker/local-server.mjs",
+    "web:dev": "npm --workspace apps/web run dev",
+    "web:build": "npm --workspace apps/web run build",
+    "package:local": "powershell -ExecutionPolicy Bypass -File scripts/package-local-product.ps1",
+    "package:upgrade": "powershell -ExecutionPolicy Bypass -File scripts/package-overlay-upgrade.ps1",
+    "check:mojibake": "node scripts/check-mojibake.mjs",
+    "db:sync-packages": "node packages/db/scripts/sync-packages.mjs"
+  },
+  "dependencies": {
+    "node-edge-tts": "^1.2.10",
+    "qrcode-terminal": "^0.12.0",
+    "silk-wasm": "^3.7.1"
+  }
+}

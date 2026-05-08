@@ -1,0 +1,914 @@
+/* Viral deconstruction page overrides loaded after legacy.css. */
+.viralPage {
+  gap: 16px;
+}
+
+.viralWorkspacePro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.viralWorkspacePro.hasResult {
+  grid-template-columns: 1fr;
+}
+
+.viralComposerPro,
+.viralResultColumn {
+  min-width: 0;
+}
+
+.viralComposerPro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: end;
+  padding: 16px;
+}
+
+.viralPage .panel.x-panel.viralComposerPro {
+  padding: 16px;
+}
+
+.viralWorkspacePro.hasResult .viralComposerPro {
+  opacity: 1;
+}
+
+.viralPanelHead {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.viralPanelHead > span {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--primary) 36%, var(--line));
+  border-radius: 8px;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, var(--panel));
+}
+
+.viralPanelHead h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.viralPanelHead p {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.viralField {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.viralField span {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.viralField textarea,
+.viralField input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px 14px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--panel-2) 78%, transparent);
+  font: inherit;
+  outline: 0;
+  transition: border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.viralField textarea {
+  min-height: 260px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.viralLinkField {
+  gap: 7px;
+}
+
+.viralLinkField input {
+  min-height: 42px;
+}
+
+.viralField textarea:focus,
+.viralField input:focus {
+  border-color: color-mix(in srgb, var(--primary) 62%, var(--line));
+  background: color-mix(in srgb, var(--panel-2) 92%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.viralInputHints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+}
+
+.viralInputHints span,
+.viralInputHints strong {
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--panel-2) 70%, var(--panel));
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.viralInputHints.isWarning strong {
+  border-color: color-mix(in srgb, var(--warning) 48%, var(--line));
+  color: color-mix(in srgb, var(--warning) 84%, #fff);
+  background: color-mix(in srgb, var(--warning) 10%, var(--panel));
+}
+
+.viralInputHints.isLink strong {
+  border-color: color-mix(in srgb, var(--success) 42%, var(--line));
+  color: color-mix(in srgb, var(--success) 84%, #fff);
+  background: color-mix(in srgb, var(--success) 10%, var(--panel));
+}
+
+.viralInputHints.isInvalid strong {
+  border-color: color-mix(in srgb, var(--danger) 42%, var(--line));
+  color: color-mix(in srgb, var(--danger) 82%, #fff);
+  background: color-mix(in srgb, var(--danger) 10%, var(--panel));
+}
+
+.viralFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.viralFieldWide {
+  grid-column: 1 / -1;
+}
+
+.viralActionsPro {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+  padding-top: 0;
+  white-space: nowrap;
+}
+
+.viralRunButton,
+.viralIconButton {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+}
+
+.viralSpin {
+  animation: viralSpin 0.9s linear infinite;
+}
+
+@keyframes viralSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.viralResultColumn {
+  display: grid;
+  gap: 12px;
+}
+
+.viralMessage {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--line));
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--text-soft);
+  background: color-mix(in srgb, var(--primary) 9%, var(--panel));
+  font-size: 13px;
+}
+
+.viralMessageError {
+  border-color: color-mix(in srgb, var(--danger) 46%, var(--line));
+  color: color-mix(in srgb, var(--danger) 78%, #fff);
+  background: color-mix(in srgb, var(--danger) 10%, var(--panel));
+}
+
+.viralMessageContent {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.viralMessageContent strong {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.viralMessageContent span,
+.viralMessageContent small {
+  color: inherit;
+  line-height: 1.55;
+}
+
+.viralRecoveryActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 3px;
+}
+
+.viralEmptyResult {
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 30px;
+  text-align: center;
+}
+
+.viralEmptyResult svg {
+  color: var(--primary);
+}
+
+.viralEmptyResult h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.viralEmptyResult p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.viralEmptyGuide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 640px;
+}
+
+.viralEmptyGuide span {
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--panel-2) 72%, var(--panel));
+  font-size: 12px;
+}
+
+.viralSummaryCard {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.viralPage .panel.x-panel.viralSummaryCard {
+  padding: 24px;
+}
+
+.viralMetaStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.viralMetaStrip span {
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: 6px 9px;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--panel-2) 74%, var(--panel));
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viralResultGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.viralSectionCard {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--panel-2) 22%, transparent), transparent),
+    color-mix(in srgb, var(--panel) 92%, transparent);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.viralWorkspacePro.hasResult .viralSectionCard {
+  padding: 18px;
+}
+
+.viralSectionCard h3 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.viralSectionCard h3 svg {
+  color: var(--primary);
+}
+
+.viralSectionHead {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.viralSectionHead h3 {
+  min-width: 0;
+}
+
+.viralWarningCard h3 svg {
+  color: var(--warning);
+}
+
+.viralParsedCard {
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--line));
+}
+
+.viralParsedCard.isWarning {
+  border-color: color-mix(in srgb, var(--warning) 44%, var(--line));
+}
+
+.viralParsedMeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.viralParsedHeadActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.viralParsedMeta span {
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--panel-2) 70%, transparent);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.viralParsedLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 16px;
+  align-items: start;
+}
+
+.viralParsedText {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+  max-height: 430px;
+  overflow: auto;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 13px;
+  background: color-mix(in srgb, var(--panel-2) 58%, transparent);
+}
+
+.viralParsedText strong {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.viralParsedText p,
+.viralParsedText small {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.viralParsedText small {
+  color: color-mix(in srgb, var(--warning) 82%, #fff);
+}
+
+.viralParsedText a {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  width: fit-content;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.viralParsedImages {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.viralParsedImage,
+.viralParsedNoImage {
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--panel-2) 64%, transparent);
+}
+
+.viralParsedImage {
+  aspect-ratio: 1;
+}
+
+.viralParsedImage.isBroken {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 5px;
+  padding: 8px;
+  color: var(--text-muted);
+  text-align: center;
+  text-decoration: none;
+}
+
+.viralParsedImage.isBroken svg {
+  color: var(--text-soft);
+}
+
+.viralParsedImage.isBroken span {
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.viralParsedImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.viralParsedNoImage {
+  display: grid;
+  min-height: 120px;
+  place-items: center;
+  padding: 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.viralTrustGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.viralTrustGrid article {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 11px;
+  background: color-mix(in srgb, var(--panel-2) 58%, transparent);
+}
+
+.viralTrustGrid article > span {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.viralTrustGrid article > span svg {
+  color: var(--primary);
+}
+
+.viralTrustGrid .viralWarningBlock > span svg {
+  color: var(--warning);
+}
+
+.viralList {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.viralList li {
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 9px 10px;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--panel-2) 64%, transparent);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.viralMuted {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.viralInlineStatus {
+  margin: -2px 0 0;
+  color: color-mix(in srgb, var(--warning) 82%, #fff);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.viralInlineStatus.isSuccess {
+  color: color-mix(in srgb, var(--success) 82%, #fff);
+}
+
+.viralLogicGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.viralLogicGrid article {
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 11px;
+  background: color-mix(in srgb, var(--panel-2) 56%, transparent);
+}
+
+.viralLogicPrimary {
+  grid-column: 1 / -1;
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--line-soft)) !important;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--primary) 12%, transparent), transparent 54%),
+    color-mix(in srgb, var(--panel-2) 58%, transparent) !important;
+}
+
+.viralLogicPrimary strong {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.viralLogicGrid span {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.viralLogicGrid p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.viralLogicWide {
+  grid-column: 1 / -1;
+}
+
+.viralImageStrategyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.viralImageStrategyGrid article {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 11px;
+  background: color-mix(in srgb, var(--panel-2) 56%, transparent);
+}
+
+.viralImageStrategyGrid span {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.viralImageStrategyGrid p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.viralImageDirections {
+  grid-column: 1 / -1;
+}
+
+.viralAngleGridPro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.viralAngleCardPro {
+  display: grid;
+  gap: 9px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 13px;
+  background: color-mix(in srgb, var(--panel-2) 58%, transparent);
+  cursor: pointer;
+  transition: border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.viralAngleCardPro:hover {
+  border-color: color-mix(in srgb, var(--primary) 34%, var(--line));
+}
+
+.viralAngleCardPro.isSelected {
+  border-color: color-mix(in srgb, var(--primary) 48%, var(--line));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--primary) 10%, transparent), transparent 58%),
+    color-mix(in srgb, var(--panel-2) 62%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.viralAngleCardPro.isSelected .viralScoreBadge {
+  min-width: 82px;
+  color: #fff;
+  background: var(--primary);
+}
+
+.viralAngleCardPro > div {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.viralAngleCardPro strong {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.viralAngleCardPro .viralScoreBadge {
+  display: inline-grid;
+  min-width: 68px;
+  height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 13%, var(--panel));
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.viralAngleCardPro p,
+.viralAngleCardPro small {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.viralRecommendCard {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  border-color: color-mix(in srgb, var(--primary) 34%, var(--line));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--primary) 14%, transparent), transparent 48%),
+    color-mix(in srgb, var(--panel) 92%, transparent);
+}
+
+.viralRecommendActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.viralRecommendCard > div {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.viralRecommendCard strong {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.viralRecommendCard p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.viralMigrationPanel {
+  border-color: color-mix(in srgb, var(--primary) 28%, var(--line));
+}
+
+.viralRecommendedAngle {
+  display: grid;
+  gap: 7px;
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--line-soft));
+  border-radius: 8px;
+  padding: 13px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--primary) 13%, transparent), transparent 52%),
+    color-mix(in srgb, var(--panel-2) 58%, transparent);
+}
+
+.viralRecommendedAngle span {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.viralRecommendedAngle strong {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.viralRecommendedAngle p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.viralRecommendedAngle small {
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.viralMigrationSettings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.viralMigrationSettings label {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.viralMigrationSettings span {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.viralMigrationSettings input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 11px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--panel-2) 72%, transparent);
+  font: inherit;
+  outline: 0;
+}
+
+.viralMigrationSettings input:focus {
+  border-color: color-mix(in srgb, var(--primary) 62%, var(--line));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 13%, transparent);
+}
+
+.viralMigrationWide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 1180px) {
+  .viralWorkspacePro {
+    grid-template-columns: 1fr;
+  }
+
+  .viralWorkspacePro.hasResult {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  .viralTrustGrid,
+  .viralAngleGridPro,
+  .viralParsedLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .viralFormGrid,
+  .viralResultGrid,
+  .viralLogicGrid,
+  .viralImageStrategyGrid,
+  .viralMigrationSettings,
+  .viralRecommendCard {
+    grid-template-columns: 1fr;
+  }
+
+  .viralPage {
+    gap: 12px;
+  }
+
+  .viralWorkspacePro,
+  .viralResultColumn {
+    gap: 10px;
+  }
+
+  .viralComposerPro,
+  .viralSummaryCard,
+  .viralSectionCard {
+    padding: 14px;
+  }
+
+  .viralWorkspacePro.hasResult .viralSectionCard {
+    padding: 14px;
+  }
+
+  .viralPage .panel.x-panel.viralSummaryCard {
+    padding: 16px;
+  }
+
+  .viralComposerPro {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .viralPage .panel.x-panel.viralComposerPro {
+    padding: 14px;
+  }
+
+  .viralTrustGrid article,
+  .viralLogicGrid article,
+  .viralAngleCardPro {
+    padding: 10px;
+  }
+
+  .viralActionsPro {
+    justify-content: stretch;
+  }
+
+  .viralActionsPro button,
+  .viralRecommendActions,
+  .viralRecommendCard button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .viralSectionHead {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .viralParsedMeta {
+    justify-content: flex-start;
+  }
+}

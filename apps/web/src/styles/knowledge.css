@@ -1,0 +1,451 @@
+.knowledgePage {
+  gap: 16px;
+}
+
+.knowledgePanel {
+  display: grid;
+  gap: 16px;
+  padding: 20px 22px 22px;
+  border-color: color-mix(in srgb, var(--primary) 22%, var(--line));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--panel-2) 72%, transparent), color-mix(in srgb, var(--panel) 96%, transparent)),
+    var(--panel);
+}
+
+.knowledgeSummary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.knowledgeSummary article {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 5px 10px;
+  align-items: center;
+  padding: 14px 15px;
+  border: 1px solid rgba(104, 151, 213, 0.2);
+  border-radius: 10px;
+  background: rgba(7, 17, 31, 0.32);
+}
+
+.knowledgeSummary svg {
+  grid-row: span 2;
+  color: var(--primary);
+}
+
+.knowledgeSummary span {
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.knowledgeSummary strong {
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.knowledgeToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(104, 151, 213, 0.22);
+  border-radius: 10px;
+  background: rgba(7, 17, 31, 0.28);
+}
+
+.knowledgeTypeFilters,
+.knowledgeTools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.knowledgeFilterButton {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 11px;
+  border: 1px solid rgba(104, 151, 213, 0.26);
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: rgba(17, 32, 52, 0.56);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.knowledgeFilterButton span {
+  display: inline-flex;
+  min-width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: rgba(104, 151, 213, 0.14);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.knowledgeFilterButton:hover,
+.knowledgeFilterButton.selected {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--primary) 52%, var(--line));
+  background: color-mix(in srgb, var(--primary) 16%, rgba(17, 32, 52, 0.74));
+}
+
+.knowledgeFilterButton.selected span {
+  color: #fff;
+  background: var(--primary);
+}
+
+.knowledgeSearch {
+  display: inline-flex;
+  width: 300px;
+  min-width: 240px;
+  height: 34px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid rgba(104, 151, 213, 0.3);
+  border-radius: 9px;
+  color: var(--text-soft);
+  background: rgba(7, 17, 31, 0.46);
+}
+
+.knowledgeSearch input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+  font-size: 12px;
+}
+
+.knowledgeSearch input::placeholder {
+  color: var(--text-soft);
+}
+
+.knowledgeStatusSelect {
+  height: 34px;
+  min-width: 104px;
+  padding: 0 9px;
+  border: 1px solid rgba(104, 151, 213, 0.3);
+  border-radius: 9px;
+  color: var(--text);
+  background: rgba(7, 17, 31, 0.46);
+  font-size: 12px;
+}
+
+.knowledgeNotice {
+  margin: 0;
+  padding: 9px 11px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 9px;
+  color: var(--text-muted);
+  background: rgba(7, 17, 31, 0.34);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.knowledgeNotice.isError {
+  border-color: color-mix(in srgb, var(--danger) 36%, var(--line));
+  color: #ffb1ba;
+  background: color-mix(in srgb, var(--danger) 10%, rgba(7, 17, 31, 0.34));
+}
+
+.knowledgeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.knowledgeCard {
+  display: grid;
+  min-height: 248px;
+  align-content: start;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(104, 151, 213, 0.22);
+  border-radius: 10px;
+  background: rgba(11, 23, 39, 0.62);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+}
+
+.knowledgeCard:hover {
+  border-color: color-mix(in srgb, var(--primary) 38%, var(--line));
+  background: color-mix(in srgb, var(--primary) 8%, rgba(11, 23, 39, 0.7));
+}
+
+.knowledgeCard.isArchived {
+  opacity: 0.72;
+}
+
+.knowledgeCardHead,
+.knowledgeMeta,
+.knowledgeTags,
+.knowledgeActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.knowledgeCardHead {
+  justify-content: space-between;
+}
+
+.knowledgeCardHead small {
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.knowledgeMeta span,
+.knowledgeTags span {
+  display: inline-flex;
+  max-width: 210px;
+  min-height: 25px;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 9px;
+  overflow: hidden;
+  border: 1px solid rgba(104, 151, 213, 0.22);
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: rgba(17, 32, 52, 0.52);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.knowledgeCard h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.38;
+}
+
+.knowledgeCard p {
+  display: -webkit-box;
+  min-height: 67px;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.knowledgeForbidden {
+  padding: 9px 10px;
+  border: 1px solid rgba(244, 93, 105, 0.22);
+  border-radius: 8px;
+  color: #ffb1ba;
+  background: rgba(244, 93, 105, 0.08);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.knowledgeActions {
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.knowledgeActions button {
+  min-height: 32px;
+}
+
+.knowledgePager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(104, 151, 213, 0.18);
+  border-radius: 10px;
+  color: var(--text-soft);
+  background: rgba(7, 17, 31, 0.24);
+  font-size: 12px;
+}
+
+.knowledgePager > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.knowledgePager small {
+  color: var(--text-soft);
+}
+
+.knowledgePager > div,
+.knowledgePagerNumberWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.knowledgePager button {
+  display: inline-flex;
+  min-width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border: 1px solid rgba(104, 151, 213, 0.26);
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: rgba(17, 32, 52, 0.56);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.knowledgePager button:hover:not(:disabled),
+.knowledgePager button.selected {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--primary) 52%, var(--line));
+  background: color-mix(in srgb, var(--primary) 16%, rgba(17, 32, 52, 0.74));
+}
+
+.knowledgePager button:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+}
+
+.knowledgeEditorModal {
+  width: min(900px, 94vw);
+}
+
+.knowledgeEditorForm textarea {
+  min-height: 190px;
+}
+
+.knowledgeEditorForm label > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.knowledgeFieldMark {
+  display: inline-flex;
+  height: 19px;
+  align-items: center;
+  padding: 0 7px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 999px;
+  font-size: 11px;
+  font-style: normal;
+  line-height: 1;
+}
+
+.knowledgeFieldMark.isRequired {
+  border-color: color-mix(in srgb, var(--warning) 34%, rgba(104, 151, 213, 0.24));
+  color: #ffd27d;
+  background: color-mix(in srgb, var(--warning) 10%, rgba(7, 17, 31, 0.3));
+}
+
+.knowledgeFieldMark.isOptional {
+  color: var(--text-soft);
+  background: rgba(17, 32, 52, 0.42);
+}
+
+.knowledgeFieldHint {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.knowledgeAiToggle {
+  min-height: 40px;
+}
+
+.knowledgeConfirmModal {
+  width: min(520px, 92vw);
+}
+
+.knowledgeConfirmBody {
+  display: grid;
+  gap: 12px;
+  padding: 18px 22px 22px;
+}
+
+.knowledgeConfirmBody strong {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.knowledgeConfirmBody p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.knowledgeConfirmActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 980px) {
+  .knowledgeSummary {
+    grid-template-columns: 1fr;
+  }
+
+  .knowledgeToolbar {
+    display: grid;
+  }
+
+  .knowledgeTools,
+  .knowledgeSearch,
+  .knowledgeStatusSelect {
+    width: 100%;
+  }
+
+  .knowledgePager {
+    display: grid;
+  }
+
+  .knowledgePager > span {
+    display: grid;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .knowledgePanel {
+    padding: 14px;
+  }
+
+  .knowledgeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .knowledgeActions,
+  .knowledgeConfirmActions {
+    justify-content: stretch;
+  }
+
+  .knowledgeActions button,
+  .knowledgeConfirmActions button {
+    flex: 1 1 auto;
+  }
+
+  .knowledgePager > div {
+    flex-wrap: wrap;
+  }
+}

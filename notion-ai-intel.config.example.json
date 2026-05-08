@@ -1,0 +1,76 @@
+{
+  "enabled": false,
+  "feed_urls": [
+    "https://openai.com/news/rss.xml",
+    "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "https://venturebeat.com/category/ai/feed/"
+  ],
+  "fetch_limit": 12,
+  "notion": {
+    "token": "secret_xxx",
+    "database_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "property_map": {
+      "title": "标题",
+      "summary": "总结",
+      "usage": "用途",
+      "link": "链接",
+      "date": "日期",
+      "category": "分类"
+    }
+  },
+  "content_publish": {
+    "token": "",
+    "database_id": "",
+    "property_map": {
+      "title": "标题",
+      "content_type": "内容类型",
+      "publish_status": "发布状态",
+      "source_intel": "来源情报",
+      "summary": "摘要",
+      "final_post": "最终成稿",
+      "platform": "目标平台",
+      "publish_date": "发布日期",
+      "publish_url": "发布链接"
+    }
+  },
+  "xiaohongshu": {
+    "enable_notion": false,
+    "sync_notion_during_workflow": false
+  },
+  "hermes": {
+    "enabled": false,
+    "mode": "research",
+    "provider": "hermes-worker",
+    "command": "hermes",
+    "wsl_distro": "Ubuntu",
+    "worker_url": "http://127.0.0.1:3307",
+    "timeout_seconds": 180,
+    "fallback_on_error": true
+  },
+  "image_generation": {
+    "enabled": false,
+    "provider": "openai",
+    "api_key": "",
+    "base_url": "https://api.openai.com/v1",
+    "model": "gpt-image-1",
+    "response_format": "b64_json",
+    "size": "1024x1536",
+    "quality": "medium",
+    "n": 1,
+    "aspect_ratio": "16:9",
+    "image_size": "2K",
+    "generate_body_images": false,
+    "max_generated_images": 1
+  },
+  "workflow": {
+    "model_timeout_seconds": 180,
+    "skill_profile": "standard",
+    "skill_notes": "",
+    "enable_skill_fallback": true,
+    "skills": {
+      "deliveryGate": {
+        "enabled": false
+      }
+    }
+  }
+}

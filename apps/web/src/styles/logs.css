@@ -1,0 +1,289 @@
+.logsPage {
+  gap: 12px;
+}
+
+.logsUpdated {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #9fb0c7;
+  font-size: 13px;
+}
+
+.logsMetricGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.logsMetric {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 7px 10px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid rgba(100, 139, 196, 0.25);
+  border-radius: 8px;
+  background: #101c2e;
+}
+
+.logsMetric svg {
+  grid-row: span 2;
+  color: #91b6ff;
+}
+
+.logsMetric span {
+  color: #9fb0c7;
+  font-size: 12px;
+}
+
+.logsMetric strong {
+  color: #f5f8ff;
+  font-size: 24px;
+}
+
+.logsMetricWarn svg,
+.logsMetricWarn strong {
+  color: #f2c94c;
+}
+
+.logsMetricError svg,
+.logsMetricError strong {
+  color: #ff6b8a;
+}
+
+.logsSourcePanel,
+.logsToolbar,
+.logsBody {
+  padding: 14px;
+  border-color: rgba(100, 139, 196, 0.28);
+  background: #101c2e;
+}
+
+.logsSectionHead,
+.logsBodyHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.logsSectionHead span,
+.logsBodyHead span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #f5f8ff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.logsSectionHead p,
+.logsBodyHead small {
+  margin: 0;
+  color: #9fb0c7;
+  font-size: 12px;
+}
+
+.logsSourceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.logsSourceCard {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid rgba(100, 139, 196, 0.18);
+  border-radius: 8px;
+  color: inherit;
+  text-align: left;
+  background: rgba(8, 21, 37, 0.66);
+  cursor: pointer;
+}
+
+.logsSourceCard.selected,
+.logsSourceCard:hover {
+  border-color: rgba(145, 182, 255, 0.58);
+  background: rgba(63, 124, 255, 0.12);
+}
+
+.logsSourceCard span,
+.logsSourceCard strong,
+.logsSourceCard small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logsSourceCard span {
+  color: #f5f8ff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.logsSourceCard strong {
+  color: #91b6ff;
+  font-size: 12px;
+}
+
+.logsSourceCard small {
+  color: #7f91aa;
+  font-size: 12px;
+}
+
+.logsToolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 150px auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.logsSearch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 38px;
+  padding: 0 11px;
+  border: 1px solid rgba(100, 139, 196, 0.24);
+  border-radius: 8px;
+  background: #081525;
+}
+
+.logsSearch svg {
+  color: #91b6ff;
+}
+
+.logsSearch input,
+.logsToolbar select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  color: #f5f8ff;
+  background: transparent;
+}
+
+.logsToolbar select {
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid rgba(100, 139, 196, 0.24);
+  border-radius: 8px;
+  background: #081525;
+}
+
+.logsList {
+  display: grid;
+  gap: 7px;
+}
+
+.logRow {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) 150px;
+  gap: 12px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid rgba(100, 139, 196, 0.14);
+  border-left: 3px solid rgba(145, 182, 255, 0.35);
+  border-radius: 8px;
+  background: rgba(8, 21, 37, 0.62);
+}
+
+.logRow-error {
+  border-left-color: #ff6b8a;
+}
+
+.logRow-warn {
+  border-left-color: #f2c94c;
+}
+
+.logRow-info {
+  border-left-color: #31d084;
+}
+
+.logRow div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.logRow span,
+.logRow strong,
+.logRow time {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logRow span {
+  color: #f5f8ff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.logRow strong {
+  color: #91b6ff;
+  font-size: 12px;
+}
+
+.logRow p {
+  margin: 0;
+  color: #c8d4e6;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.logRow time {
+  color: #7f91aa;
+  font-size: 12px;
+  text-align: right;
+}
+
+.logsRaw {
+  max-height: 620px;
+  margin: 0;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid rgba(100, 139, 196, 0.18);
+  border-radius: 8px;
+  color: #c8d4e6;
+  background: #081525;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.logsEmptyText {
+  margin: 0;
+  color: #9fb0c7;
+  font-size: 13px;
+}
+
+@media (max-width: 1180px) {
+  .logsMetricGrid,
+  .logsSourceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .logsToolbar,
+  .logRow {
+    grid-template-columns: 1fr;
+  }
+
+  .logRow time {
+    text-align: left;
+  }
+}
+
+@media (max-width: 720px) {
+  .logsMetricGrid,
+  .logsSourceGrid {
+    grid-template-columns: 1fr;
+  }
+}

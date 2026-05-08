@@ -1,0 +1,48 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# build and packaged artifacts
+dist/
+apps/web/dist/
+.packaging-cache/
+
+# local runtime data
+data/
+logs/
+.browser-profiles/
+.openclaw-workspace/
+.wechat-direct-bridge/
+__pycache__/
+*.pyc
+
+# local secrets and machine-specific config
+notion-ai-intel.config.json
+wechat-bridge.config.json
+plugins-allow.batch.json
+wechat-*.batch.json
+*_notion_db.json
+_notion_db.json
+
+# local logs and temp files
+*.log
+*.tmp
+.tmp-*
+*.tsbuildinfo
+workflow-stability-report-*.md
+apps/web/backups/
+asus_drivers.json
+DRV_*.zip
+morning-ai-brief.*
+odd-quotes-main.txt
+
+# generated documents / experiments
+*.zip
+*.pdf
+*.html
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

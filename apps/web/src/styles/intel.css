@@ -1,0 +1,766 @@
+/* Intel page overrides loaded after legacy.css. */
+.intelPage {
+  gap: 16px;
+}
+
+.intelPanel {
+  display: grid;
+  gap: 16px;
+  padding: 20px 22px 22px;
+  border-color: color-mix(in srgb, var(--primary) 22%, var(--line));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--panel-2) 72%, transparent), color-mix(in srgb, var(--panel) 96%, transparent)),
+    var(--panel);
+}
+
+.intelTitleActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.intelTopicFetch {
+  display: inline-flex;
+  height: 38px;
+  align-items: center;
+  gap: 8px;
+}
+
+.intelTopicFetch input {
+  width: min(360px, 34vw);
+  height: 38px;
+  min-width: 220px;
+  padding: 0 12px;
+  border: 1px solid rgba(104, 151, 213, 0.3);
+  border-radius: 9px;
+  color: var(--text);
+  background: rgba(7, 17, 31, 0.5);
+  outline: 0;
+  font-size: 12px;
+}
+
+.intelTopicFetch input::placeholder {
+  color: var(--text-soft);
+}
+
+.intelControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid rgba(104, 151, 213, 0.22);
+  border-radius: 10px;
+  background: rgba(7, 17, 31, 0.28);
+}
+
+.intelFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.intelTools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.intelResultCount {
+  color: var(--text-soft);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.intelFilterButton {
+  display: inline-flex;
+  height: 32px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  border: 1px solid rgba(104, 151, 213, 0.26);
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: rgba(17, 32, 52, 0.56);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.intelFilterButton span {
+  display: inline-flex;
+  min-width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: rgba(104, 151, 213, 0.14);
+  font-variant-numeric: tabular-nums;
+}
+
+.intelFilterButton:hover,
+.intelFilterButton.selected {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--primary) 52%, var(--line));
+  background: color-mix(in srgb, var(--primary) 16%, rgba(17, 32, 52, 0.74));
+}
+
+.intelFilterButton.selected span {
+  color: #fff;
+  background: var(--primary);
+}
+
+.intelSearch {
+  display: inline-flex;
+  width: 320px;
+  min-width: 260px;
+  height: 34px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid rgba(104, 151, 213, 0.3);
+  border-radius: 9px;
+  color: var(--text-soft);
+  background: rgba(7, 17, 31, 0.46);
+}
+
+.intelSearch input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+  font-size: 12px;
+}
+
+.intelSearch input::placeholder {
+  color: var(--text-soft);
+}
+
+.intelSort {
+  display: inline-flex;
+  height: 34px;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.intelSort select {
+  height: 34px;
+  min-width: 104px;
+  padding: 0 9px;
+  border: 1px solid rgba(104, 151, 213, 0.3);
+  border-radius: 9px;
+  color: var(--text);
+  background: rgba(7, 17, 31, 0.46);
+  font-size: 12px;
+}
+
+.intelNotice {
+  padding: 9px 11px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 9px;
+  color: var(--text-muted);
+  background: rgba(7, 17, 31, 0.34);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.intelNotice-success {
+  border-color: color-mix(in srgb, var(--success) 34%, var(--line));
+  color: #a9f3cf;
+  background: color-mix(in srgb, var(--success) 10%, rgba(7, 17, 31, 0.34));
+}
+
+.intelNotice-error {
+  border-color: color-mix(in srgb, var(--danger) 36%, var(--line));
+  color: #ffb1ba;
+  background: color-mix(in srgb, var(--danger) 10%, rgba(7, 17, 31, 0.34));
+}
+
+.intelImportModal {
+  width: min(760px, calc(100vw - 48px));
+}
+
+.intelImportModal header p {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.intelImportForm {
+  display: grid;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(104, 151, 213, 0.2);
+}
+
+.intelImportForm label {
+  display: grid;
+  gap: 7px;
+}
+
+.intelImportForm label > span {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.intelImportForm input,
+.intelImportForm select,
+.intelImportForm textarea {
+  width: 100%;
+  border: 1px solid rgba(104, 151, 213, 0.32);
+  border-radius: 9px;
+  color: var(--text);
+  background: rgba(7, 17, 31, 0.62);
+  outline: 0;
+  font-size: 13px;
+}
+
+.intelImportForm input,
+.intelImportForm select {
+  height: 38px;
+  padding: 0 11px;
+}
+
+.intelImportForm textarea {
+  min-height: 190px;
+  max-height: 42vh;
+  padding: 11px;
+  resize: vertical;
+  line-height: 1.65;
+}
+
+.intelImportForm p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.intelList {
+  display: grid;
+  gap: 10px;
+}
+
+.intelItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+  align-items: start;
+  padding: 18px;
+  border: 1px solid rgba(104, 151, 213, 0.22);
+  border-radius: 10px;
+  background: rgba(11, 23, 39, 0.62);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
+}
+
+.intelItem:hover {
+  border-color: color-mix(in srgb, var(--primary) 38%, var(--line));
+  background: color-mix(in srgb, var(--primary) 8%, rgba(11, 23, 39, 0.7));
+}
+
+.intelItem.isActionable {
+  border-color: color-mix(in srgb, var(--success) 26%, rgba(104, 151, 213, 0.22));
+}
+
+.intelItem.isMuted {
+  opacity: 0.74;
+}
+
+.intelItemBody {
+  min-width: 0;
+}
+
+.intelMeta,
+.intelTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.intelMeta span,
+.intelTags span {
+  display: inline-flex;
+  max-width: 220px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  overflow: hidden;
+  border: 1px solid rgba(104, 151, 213, 0.2);
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: rgba(17, 32, 52, 0.5);
+  font-size: 11px;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.intelStatusChip-actionable {
+  border-color: color-mix(in srgb, var(--success) 36%, rgba(104, 151, 213, 0.2)) !important;
+  color: #a9f3cf !important;
+  background: color-mix(in srgb, var(--success) 12%, rgba(17, 32, 52, 0.5)) !important;
+}
+
+.intelStatusChip-pending {
+  border-color: color-mix(in srgb, var(--warning) 32%, rgba(104, 151, 213, 0.2)) !important;
+  color: #ffd27d !important;
+}
+
+.intelStatusChip-done {
+  color: #bcd1ff !important;
+}
+
+.intelStatusChip-muted {
+  opacity: 0.72;
+}
+
+.intelTitleButton {
+  display: block;
+  width: 100%;
+  margin: 10px 0 6px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.intelTitleButton:hover {
+  color: #cfe0ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.intelTitleButton:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--primary) 72%, transparent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.intelSourceLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.intelSourceLine span,
+.intelSourceLine i {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.intelSourceLine span {
+  color: #b8c7df;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.intelSourceLine i {
+  font-style: normal;
+}
+
+.intelItem p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.intelTags {
+  margin-top: 10px;
+}
+
+.intelTags span {
+  color: #bcd1ff;
+  background: color-mix(in srgb, var(--primary) 13%, rgba(17, 32, 52, 0.5));
+}
+
+.intelActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+.intelActions .ghost,
+.intelActions .primary,
+.intelSyncButton {
+  min-height: 32px;
+  white-space: nowrap;
+}
+
+.intelActions .ghost,
+.intelActions .primary {
+  justify-content: center;
+}
+
+.intelActions a {
+  text-decoration: none;
+}
+
+.intelPrimaryAction {
+  min-width: 104px;
+}
+
+.intelCreateAction {
+  min-width: 104px;
+  border-color: rgba(104, 151, 213, 0.3) !important;
+  color: #b8c7df !important;
+  background: rgba(17, 32, 52, 0.52) !important;
+}
+
+.intelCreateAction:hover:not(:disabled),
+.intelCreateAction.isProminent {
+  border-color: color-mix(in srgb, var(--primary) 52%, var(--line)) !important;
+  color: #dce8ff !important;
+  background: color-mix(in srgb, var(--primary) 14%, rgba(17, 32, 52, 0.7)) !important;
+}
+
+.intelCreateAction.isProminent {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.intelMarkAction {
+  color: #a9f3cf !important;
+}
+
+.intelMarkAction:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--success) 42%, var(--line)) !important;
+  background: color-mix(in srgb, var(--success) 10%, rgba(17, 32, 52, 0.7)) !important;
+}
+
+.intelIgnoreAction {
+  color: #c6d0df !important;
+}
+
+.intelIgnoreAction:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--danger) 34%, var(--line)) !important;
+  color: #ffb1ba !important;
+  background: color-mix(in srgb, var(--danger) 9%, rgba(17, 32, 52, 0.7)) !important;
+}
+
+.intelEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 10px;
+  background: rgba(7, 17, 31, 0.24);
+}
+
+.intelEmptyText {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.intelEmptyText strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.intelEmptyText span {
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.intelEmptyActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.intelPagerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(104, 151, 213, 0.18);
+  border-radius: 10px;
+  color: var(--text-soft);
+  background: rgba(7, 17, 31, 0.24);
+  font-size: 12px;
+}
+
+.intelPagerBar > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.intelPagerBar button,
+.intelPagerBar strong {
+  display: inline-flex;
+  min-width: 30px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 9px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 8px;
+  color: var(--text-soft);
+  background: rgba(17, 32, 52, 0.46);
+  font-size: 12px;
+}
+
+.intelPagerBar strong {
+  color: var(--text);
+  background: color-mix(in srgb, var(--primary) 14%, rgba(17, 32, 52, 0.46));
+}
+
+.intelPagerBar button {
+  cursor: pointer;
+}
+
+.intelPagerBar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+}
+
+.isSpinning {
+  animation: intelSpin 1s linear infinite;
+}
+
+.intelDetailModal {
+  display: grid;
+  width: min(720px, calc(100vw - 48px));
+  gap: 16px;
+  padding: 20px;
+}
+
+.intelDetailModal header {
+  padding-right: 38px;
+}
+
+.intelDetailKicker {
+  margin-bottom: 6px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.intelDetailModal h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.intelDetailModal header p {
+  margin: 7px 0 0;
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.intelDecisionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.intelDecisionGrid > div {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 10px 11px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 9px;
+  background: rgba(7, 17, 31, 0.34);
+}
+
+.intelDecisionGrid span {
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.intelDecisionGrid strong {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.intelDetailGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.intelDetailGrid section {
+  display: grid;
+  gap: 7px;
+}
+
+.intelDetailGrid section:nth-child(-n + 2) {
+  grid-column: span 1;
+}
+
+.intelDetailGrid section:nth-child(n + 3) {
+  grid-column: 1 / -1;
+}
+
+.intelDetailGrid span {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.intelDetailText,
+.intelDetailLink,
+.intelDetailTags {
+  width: 100%;
+  border: 1px solid rgba(104, 151, 213, 0.26);
+  border-radius: 9px;
+  color: var(--text);
+  background: rgba(7, 17, 31, 0.42);
+  font: inherit;
+  font-size: 13px;
+}
+
+.intelDetailLink {
+  min-height: 38px;
+  padding: 9px 10px;
+}
+
+.intelDetailText {
+  min-height: 150px;
+  padding: 10px;
+  white-space: pre-wrap;
+  line-height: 1.65;
+}
+
+.intelDetailText.isMuted {
+  min-height: 38px;
+  color: var(--text-soft);
+}
+
+.intelDetailTags {
+  display: flex;
+  min-height: 42px;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+}
+
+.intelDetailTags b {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding: 0 9px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 999px;
+  color: #bcd1ff;
+  background: color-mix(in srgb, var(--primary) 12%, rgba(17, 32, 52, 0.5));
+  font-size: 12px;
+}
+
+.intelDetailTags em {
+  color: var(--text-soft);
+  font-style: normal;
+  font-size: 13px;
+}
+
+.intelDetailLink {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #bcd1ff;
+  text-decoration: none;
+}
+
+.intelDetailLink:hover {
+  color: #fff;
+  border-color: color-mix(in srgb, var(--primary) 52%, var(--line));
+}
+
+.intelDetailActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+@keyframes intelSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 980px) {
+  .intelControls,
+  .intelItem {
+    display: grid;
+  }
+
+  .intelTools {
+    display: grid;
+  }
+
+  .intelResultCount {
+    order: 3;
+  }
+
+  .intelSearch {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .intelSort {
+    justify-content: space-between;
+  }
+
+  .intelActions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .intelItem {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .intelDetailGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .intelDecisionGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intelPagerBar {
+    display: grid;
+  }
+}

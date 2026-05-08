@@ -1,0 +1,1667 @@
+/* Task page overrides loaded after legacy.css. */
+.tasksPage .taskComposerPro {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-color: color-mix(in srgb, var(--primary) 24%, var(--line));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--panel-2) 76%, transparent), color-mix(in srgb, var(--panel) 96%, transparent)),
+    var(--panel);
+}
+
+.taskComposerHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.taskComposerHead span {
+  display: inline-flex;
+  margin-bottom: 4px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.taskComposerHead h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.taskComposerHead p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.taskComposerBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 126px;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.taskComposerInput {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.taskComposerInput > span {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.taskComposerInput textarea {
+  min-height: 88px;
+  resize: vertical;
+  border-color: rgba(104, 151, 213, 0.32);
+  color: var(--text);
+  caret-color: var(--primary);
+  background: rgba(7, 17, 31, 0.34);
+  line-height: 1.65;
+}
+
+.taskComposerInput textarea::placeholder {
+  color: color-mix(in srgb, var(--text-soft) 76%, transparent);
+}
+
+.taskComposerInput textarea:focus {
+  border-color: color-mix(in srgb, var(--primary) 58%, var(--line));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+
+.taskComposerAction {
+  display: grid;
+  gap: 8px;
+  align-content: end;
+}
+
+.taskComposerBody .taskCreateButton {
+  width: 126px;
+  min-height: 48px;
+  align-self: stretch;
+  border-radius: 9px;
+  font-weight: 800;
+}
+
+.taskComposerAction small {
+  color: var(--text-soft);
+  font-size: 12px;
+  text-align: center;
+}
+
+.taskComposerTips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 2px;
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.taskComposerTips span:last-child {
+  white-space: nowrap;
+}
+
+.taskFilterBar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 2px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, var(--line));
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(28, 48, 75, 0.24), rgba(9, 20, 35, 0.24)),
+    color-mix(in srgb, var(--panel) 90%, transparent);
+}
+
+.taskFilterMain {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.taskFilterTitle {
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.taskFilterGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.taskFilterButton {
+  display: inline-flex;
+  height: 30px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  border: 1px solid rgba(104, 151, 213, 0.26);
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: rgba(17, 32, 52, 0.44);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.taskFilterButton span {
+  display: inline-flex;
+  min-width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: rgba(104, 151, 213, 0.14);
+  font-variant-numeric: tabular-nums;
+}
+
+.taskFilterButton:hover,
+.taskFilterButton.selected {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--primary) 52%, var(--line));
+  background: color-mix(in srgb, var(--primary) 16%, rgba(17, 32, 52, 0.74));
+}
+
+.taskFilterButton.selected span {
+  color: #fff;
+  background: var(--primary);
+}
+
+.taskSourceFilter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-soft);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.taskSourceLabel {
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
+.taskLiveBadge {
+  display: inline-flex;
+  height: 24px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 9px;
+  border: 1px solid color-mix(in srgb, var(--success) 30%, var(--line));
+  border-radius: 999px;
+  color: var(--success);
+  background: color-mix(in srgb, var(--success) 10%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.taskLiveBadge::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--success);
+  content: "";
+}
+
+.taskSourceFilter select {
+  height: 30px;
+  min-width: 120px;
+  border: 1px solid rgba(104, 151, 213, 0.3);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(7, 17, 31, 0.48);
+  font-size: 12px;
+}
+
+.taskCardPro-succeeded:not(.isExpanded) .taskProgressPro {
+  display: none;
+}
+
+.taskCardPro-succeeded:not(.isExpanded) .taskCardProHeader {
+  padding-bottom: 10px;
+}
+
+.taskCardPro-succeeded:not(.isExpanded) .taskCardIdentity p {
+  max-width: 760px;
+}
+
+.tasksPage .taskCardProHeader {
+  grid-template-columns: 32px minmax(0, 1fr) minmax(176px, auto);
+  gap: 14px;
+  padding: 16px 16px 13px;
+}
+
+.tasksPage .taskCardToggle {
+  width: 30px;
+  height: 30px;
+  border-color: rgba(104, 151, 213, 0.28);
+  background: rgba(17, 32, 52, 0.62);
+}
+
+.tasksPage .taskCardIdentity {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.tasksPage .taskTypeLabel {
+  margin: 0;
+  color: color-mix(in srgb, var(--primary) 86%, #fff);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tasksPage .taskCardIdentity h3 {
+  font-size: 18px;
+  line-height: 1.28;
+}
+
+.tasksPage .taskCardIdentity p {
+  max-width: 920px;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.tasksPage .taskMetaLine {
+  gap: 6px;
+  margin-top: 3px;
+}
+
+.tasksPage .taskMetaLine span {
+  max-width: 220px;
+  min-height: 22px;
+  padding: 0 8px;
+  overflow: hidden;
+  border-color: rgba(104, 151, 213, 0.22);
+  background: rgba(17, 32, 52, 0.42);
+  color: var(--text-soft);
+  text-overflow: ellipsis;
+}
+
+.tasksPage .taskUsageLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-top: 2px;
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tasksPage .taskUsageLine span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.tasksPage .taskUsageLine strong {
+  color: var(--primary);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.tasksPage .taskCardSummary {
+  min-width: 176px;
+  align-self: stretch;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-items: end;
+  gap: 9px;
+}
+
+.tasksPage .taskDurationBadge {
+  min-width: 108px;
+  padding: 9px 12px;
+  border-color: rgba(104, 151, 213, 0.28);
+  background:
+    linear-gradient(180deg, rgba(43, 74, 118, 0.34), rgba(12, 25, 42, 0.28)),
+    rgba(17, 32, 52, 0.52);
+}
+
+.tasksPage .taskDurationBadge span {
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tasksPage .taskDurationBadge strong {
+  font-size: 18px;
+}
+
+.tasksPage .taskDurationBadge.succeeded,
+.tasksPage .taskDurationBadge.completed,
+.tasksPage .taskDurationBadge.done {
+  border-color: color-mix(in srgb, var(--success) 30%, var(--line));
+  background: color-mix(in srgb, var(--success) 10%, rgba(17, 32, 52, 0.5));
+}
+
+.tasksPage .taskDurationBadge.failed,
+.tasksPage .taskDurationBadge.error {
+  border-color: color-mix(in srgb, var(--danger) 34%, var(--line));
+  background: color-mix(in srgb, var(--danger) 10%, rgba(17, 32, 52, 0.5));
+}
+
+.tasksPage .taskActionBar {
+  align-self: end;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.tasksPage .taskActionBar .inlineAction {
+  height: 30px;
+  min-width: 0;
+  padding: 0 10px;
+  border-color: rgba(104, 151, 213, 0.32);
+  background: rgba(17, 32, 52, 0.64);
+}
+
+.tasksPage .taskActionBar .inlineAction svg {
+  flex: 0 0 auto;
+}
+
+.tasksPage .taskActionBar .dangerAction {
+  border-color: color-mix(in srgb, var(--danger) 34%, var(--line));
+  color: #ff9aa8;
+  background: color-mix(in srgb, var(--danger) 9%, rgba(17, 32, 52, 0.64));
+}
+
+.taskResultLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 16px 16px 47px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--success) 24%, var(--line));
+  border-radius: 9px;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--success) 9%, rgba(7, 17, 31, 0.34));
+  font-size: 12px;
+}
+
+.taskResultLine span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskCardPro-failed .taskCurrentLine {
+  border-color: color-mix(in srgb, var(--danger) 34%, var(--line));
+  background: color-mix(in srgb, var(--danger) 8%, rgba(7, 17, 31, 0.34));
+}
+
+.taskCardPro-failed .taskCurrentLine span {
+  color: var(--danger);
+}
+
+.taskCardPro-running .taskCurrentLine,
+.taskCardPro-queued .taskCurrentLine {
+  border-color: color-mix(in srgb, var(--primary) 36%, var(--line));
+  background: color-mix(in srgb, var(--primary) 8%, rgba(7, 17, 31, 0.34));
+}
+
+.taskPagerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px 2px 0;
+  border-top: 1px solid rgba(104, 151, 213, 0.16);
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.taskPagerSummary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.taskPagerSummary small {
+  color: var(--text-soft);
+}
+
+.taskPagerControls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.taskPagerBar button,
+.taskPagerBar strong {
+  display: inline-flex;
+  min-width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 9px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 8px;
+  color: var(--text-soft);
+  background: rgba(17, 32, 52, 0.46);
+  font-size: 12px;
+}
+
+.taskPagerBar strong {
+  color: var(--text);
+  background: color-mix(in srgb, var(--primary) 14%, rgba(17, 32, 52, 0.46));
+}
+
+.taskPagerBar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+}
+
+.taskPagerBar button:not(:disabled) {
+  color: var(--text);
+  cursor: pointer;
+}
+
+.taskPagerBar button:not(:disabled):hover {
+  border-color: color-mix(in srgb, var(--primary) 46%, var(--line));
+  background: color-mix(in srgb, var(--primary) 12%, rgba(17, 32, 52, 0.46));
+}
+
+.taskEmptyState {
+  display: grid;
+  gap: 8px;
+  min-height: 136px;
+  place-items: center;
+  padding: 28px;
+  border: 1px dashed rgba(104, 151, 213, 0.28);
+  border-radius: 10px;
+  color: var(--text-muted);
+  background:
+    linear-gradient(180deg, rgba(28, 48, 75, 0.18), rgba(7, 17, 31, 0.24)),
+    rgba(7, 17, 31, 0.24);
+  text-align: center;
+}
+
+.taskEmptyIcon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(104, 151, 213, 0.28);
+  border-radius: 12px;
+  color: var(--primary);
+  background: rgba(104, 151, 213, 0.1);
+}
+
+.taskEmptyState strong {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.taskEmptyState p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.tasksPage .taskErrorHint {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin: 0 16px 16px 47px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--danger) 34%, var(--line));
+  border-radius: 10px;
+  color: #ff9aa8;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--danger) 10%, transparent), rgba(7, 17, 31, 0.28)),
+    rgba(7, 17, 31, 0.34);
+  font-size: 12px;
+}
+
+.tasksPage .taskErrorHint > svg {
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  border: 1px solid color-mix(in srgb, var(--danger) 36%, var(--line));
+  border-radius: 9px;
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+}
+
+.tasksPage .taskErrorHint div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tasksPage .taskErrorHint strong {
+  color: #ffb3bd;
+  font-size: 13px;
+}
+
+.tasksPage .taskErrorHint span {
+  display: -webkit-box;
+  min-width: 0;
+  overflow: hidden;
+  color: #ff9aa8;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tasksPage .taskErrorHint .inlineAction {
+  min-width: 96px;
+  border-color: color-mix(in srgb, var(--danger) 34%, var(--line));
+  color: #ffb3bd;
+  background: color-mix(in srgb, var(--danger) 9%, rgba(17, 32, 52, 0.72));
+}
+
+.tasksPage .taskDetailArea .taskStepTraceRow {
+  grid-template-columns: 142px minmax(0, 1fr) 72px 58px;
+  min-height: 36px;
+  gap: 10px;
+  padding: 7px 10px 7px 12px;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.tasksPage .taskDetailArea .taskStepTraceRow:hover {
+  background: rgba(104, 151, 213, 0.06);
+}
+
+.tasksPage .taskDetailArea .taskStepTraceRow p {
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.tasksPage .taskDetailArea .taskStepTraceRow small {
+  font-variant-numeric: tabular-nums;
+}
+
+.taskStepTokenLite {
+  grid-column: 2 / 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  min-width: 0;
+  margin-top: -2px;
+  color: var(--text-soft);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.taskStepTokenLite span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.taskStepTokenLite strong {
+  flex: 0 0 auto;
+  color: var(--primary);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.taskStepTokenLite em {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskStepTokenLite small {
+  flex: 0 0 auto;
+  color: var(--text-soft);
+  font-size: 11px;
+}
+
+.taskStepTokenCalls {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, var(--line));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--primary) 6%, rgba(7, 17, 31, 0.32));
+}
+
+.taskStepTokenSummary {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.taskStepTokenSummary span {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.taskStepTokenSummary strong {
+  color: var(--text);
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.taskStepTokenSummary small {
+  justify-self: start;
+  color: var(--text-soft);
+  font-size: 11px;
+}
+
+.taskStepTokenRows {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.taskStepTokenRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3px 10px;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid rgba(104, 151, 213, 0.16);
+  border-radius: 7px;
+  background: rgba(7, 17, 31, 0.22);
+}
+
+.taskStepTokenRow span {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskStepTokenRow small {
+  grid-column: 1;
+  justify-self: start;
+  color: var(--text-soft);
+  font-size: 11px;
+}
+
+.taskStepTokenRow strong {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--primary);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tasksPage .taskDetailArea .taskStepDetailButton {
+  display: inline-flex;
+  width: 56px;
+  min-width: 56px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  padding: 0 10px;
+  overflow: visible;
+  border: 1px solid rgba(104, 151, 213, 0.38);
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: rgba(17, 32, 52, 0.86);
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tasksPage .taskDetailArea .taskStepDetailButton:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--primary) 52%, var(--line));
+  background: color-mix(in srgb, var(--primary) 14%, rgba(17, 32, 52, 0.86));
+}
+
+.tasksPage .taskDetailArea .taskStepDetailButton:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--primary) 72%, transparent);
+  outline-offset: 2px;
+}
+
+.taskTraceMore {
+  border-top: 1px solid rgba(104, 151, 213, 0.12);
+}
+
+.taskTraceMore summary {
+  display: inline-flex;
+  align-items: center;
+  margin: 8px 0 8px 12px;
+  padding: 0 10px;
+  height: 28px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: rgba(17, 32, 52, 0.5);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  list-style-position: inside;
+}
+
+.taskTraceMore summary:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--primary) 42%, var(--line));
+}
+
+.taskTraceMore .traceMoreOpen {
+  display: none;
+}
+
+.taskTraceMore[open] .traceMoreClosed {
+  display: none;
+}
+
+.taskTraceMore[open] .traceMoreOpen {
+  display: inline;
+}
+
+.taskTraceMoreRows {
+  border-top: 1px solid rgba(104, 151, 213, 0.1);
+}
+
+.deleteTaskDialog {
+  display: grid;
+  width: min(520px, calc(100vw - 48px));
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+}
+
+.deleteTaskIcon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--danger) 38%, var(--line));
+  border-radius: 12px;
+  color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+}
+
+.deleteTaskContent {
+  min-width: 0;
+}
+
+.deleteTaskContent h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.deleteTaskContent p {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.deleteTaskPreview {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 10px 11px;
+  border: 1px solid rgba(104, 151, 213, 0.22);
+  border-radius: 9px;
+  background: rgba(7, 17, 31, 0.34);
+}
+
+.deleteTaskPreview span {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deleteTaskPreview small {
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.deleteTaskError {
+  margin-top: 10px;
+  padding: 9px 10px;
+  border: 1px solid color-mix(in srgb, var(--danger) 34%, var(--line));
+  border-radius: 8px;
+  color: #ff9aa8;
+  background: color-mix(in srgb, var(--danger) 10%, rgba(7, 17, 31, 0.34));
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.deleteTaskActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.deleteTaskActions .inlineAction {
+  min-width: 76px;
+}
+
+.deleteConfirmButton {
+  min-width: 104px !important;
+  border-color: color-mix(in srgb, var(--danger) 40%, var(--line)) !important;
+  color: #ffb3bd !important;
+  background: color-mix(in srgb, var(--danger) 12%, rgba(17, 32, 52, 0.86)) !important;
+}
+
+.deleteConfirmButton:hover {
+  color: #fff !important;
+  background: color-mix(in srgb, var(--danger) 24%, rgba(17, 32, 52, 0.86)) !important;
+}
+
+.taskErrorDialog {
+  display: grid;
+  width: min(460px, calc(100vw - 48px));
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+}
+
+.taskErrorIcon {
+  color: var(--danger);
+}
+
+.taskErrorDialog .deleteTaskContent p {
+  word-break: break-word;
+}
+
+.taskToast {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 80;
+  max-width: 320px;
+  padding: 11px 14px;
+  border: 1px solid color-mix(in srgb, var(--success) 34%, var(--line));
+  border-radius: 10px;
+  color: var(--text);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--success) 14%, var(--panel-2)), color-mix(in srgb, var(--panel) 94%, transparent)),
+    var(--panel);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.34);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.taskStepDetailPanel {
+  width: min(980px, calc(100vw - 40px));
+  max-height: min(86vh, 820px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 18px 20px 0;
+}
+
+.taskStepDetailPanel .modalHead {
+  flex: 0 0 auto;
+  padding: 2px 2px 11px;
+}
+
+.taskStepDetailPanel .modalHead > div {
+  padding-left: 4px;
+}
+
+.taskStepDetailBody {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 12px;
+  min-height: 0;
+  overflow: auto;
+  padding: 14px 12px 20px;
+  overscroll-behavior: contain;
+}
+
+.taskStepDetailPanel .modalHead p {
+  max-width: 760px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskStepMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  min-height: 34px;
+  padding: 6px 0;
+  border-top: 1px solid rgba(104, 151, 213, 0.16);
+  border-bottom: 1px solid rgba(104, 151, 213, 0.16);
+  align-items: center;
+}
+
+.taskStepMetaGrid span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 12px;
+  border-right: 1px solid rgba(104, 151, 213, 0.16);
+  border-radius: 0;
+  color: var(--text);
+  background: transparent;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.taskStepMetaGrid span:last-child {
+  border-right: 0;
+}
+
+.taskStepMetaGrid strong {
+  flex: 0 0 auto;
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.taskStepSummaryGrid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.18fr);
+  gap: 24px;
+}
+
+.taskStepSummaryCard,
+.taskStepErrorCard,
+.taskTokenPanel {
+  min-width: 0;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.taskStepDetailBody .taskStepSummaryCard,
+.taskStepDetailBody .taskTokenPanel {
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.taskStepDetailBody .taskStepErrorCard {
+  overflow: visible;
+  background: transparent;
+}
+
+.taskStepDetailBody .taskStepSummaryCard h3,
+.taskStepDetailBody .taskStepErrorCard h3,
+.taskStepDetailBody .taskTokenPanel h3,
+.taskStepDetailBody .taskRawGrid h3 {
+  padding: 0;
+  border-bottom: 0;
+}
+
+.taskStepSummaryCard h3,
+.taskStepErrorCard h3,
+.taskTokenPanel h3,
+.taskRawGrid h3 {
+  margin: 0 0 7px;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.taskStepSummaryCard p,
+.taskStepErrorCard p {
+  display: -webkit-box;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: rgba(7, 17, 31, 0.16);
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.taskTokenPanel {
+  display: grid;
+  gap: 5px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(104, 151, 213, 0.16);
+}
+
+.taskStepDetailBody .taskTokenPanel {
+  padding-top: 10px;
+  border-top: 1px solid rgba(104, 151, 213, 0.16);
+}
+
+.taskTokenPanelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.taskTokenPanelHead h3 {
+  margin: 0;
+}
+
+.taskTokenPanelHead span {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.taskTokenStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  border: 0;
+  overflow: visible;
+}
+
+.taskTokenStats span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 0;
+  border-right: 0;
+  border-radius: 0;
+  color: var(--text-soft);
+  background: transparent;
+  font-size: 12px;
+}
+
+.taskTokenStats span:last-child {
+  border-right: 0;
+}
+
+.taskTokenStats strong {
+  color: var(--text);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.taskTokenCallList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  max-height: none;
+  overflow: hidden;
+  padding-right: 2px;
+}
+
+.taskTokenCall {
+  display: inline-grid;
+  grid-template-columns: minmax(160px, 1fr) auto;
+  gap: 2px 10px;
+  min-width: min(420px, 100%);
+  padding: 4px 6px;
+  border-bottom: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.taskTokenCall span {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskTokenCall small {
+  grid-column: 1;
+  color: var(--text-soft);
+  font-size: 11px;
+}
+
+.taskTokenCall strong {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--primary);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.taskStepErrorCard {
+  padding: 8px 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--danger) 28%, var(--line));
+  background: transparent;
+}
+
+.taskStepErrorCard h3,
+.taskStepErrorCard p {
+  color: #ff9aa8;
+}
+
+.taskRawBlock {
+  overflow: hidden;
+  border: 0;
+  border-top: 1px solid rgba(104, 151, 213, 0.16);
+  border-radius: 0;
+  background: transparent;
+}
+
+.taskStepDetailBody .taskRawBlock {
+  overflow: hidden;
+  border: 0;
+  border-top: 1px solid rgba(104, 151, 213, 0.16);
+  border-radius: 0;
+  background: transparent;
+}
+
+.taskRawBlock summary {
+  padding: 9px 8px 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  list-style-position: inside;
+}
+
+.taskRawBlock summary:hover {
+  color: var(--text);
+}
+
+.taskRawGrid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.86fr) minmax(0, 1.14fr);
+  gap: 18px;
+  max-height: min(52vh, 460px);
+  overflow: hidden;
+  padding: 0;
+}
+
+.taskRawGrid section {
+  display: flex;
+  min-height: 0;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.taskStepDetailBody .taskRawGrid h3 {
+  margin: 0;
+  padding: 0 2px;
+}
+
+.taskRawGrid pre {
+  min-height: 260px;
+  max-height: none;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 12px 14px;
+  overflow: auto;
+  border: 1px solid rgba(104, 151, 213, 0.12);
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: rgba(7, 17, 31, 0.16);
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 980px) {
+  .taskComposerHead {
+    display: grid;
+  }
+
+  .taskComposerHead p {
+    max-width: none;
+    text-align: left;
+  }
+
+  .taskComposerBody {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .taskComposerAction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .taskComposerBody .taskCreateButton {
+    width: auto;
+    min-width: 132px;
+  }
+
+  .taskFilterBar {
+    display: grid;
+    align-items: stretch;
+  }
+
+  .taskSourceFilter {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .taskResultLine {
+    margin-left: 16px;
+    flex-wrap: wrap;
+  }
+
+  .taskResultLine span {
+    flex-basis: 100%;
+    white-space: normal;
+  }
+
+  .taskPagerBar {
+    display: grid;
+    gap: 10px;
+  }
+
+  .taskPagerSummary {
+    display: grid;
+    gap: 4px;
+  }
+
+  .tasksPage .taskErrorHint {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .tasksPage .taskErrorHint .inlineAction {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .tasksPage .taskDetailArea .taskStepTraceRow {
+    grid-template-columns: 112px minmax(0, 1fr) 70px 88px;
+  }
+
+  .taskStepTokenCalls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .taskStepTokenRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .taskStepTokenRow strong {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+
+  .tasksPage .taskCardProHeader {
+    grid-template-columns: 32px minmax(0, 1fr);
+  }
+
+  .tasksPage .taskCardSummary {
+    grid-column: 2;
+    min-width: 0;
+    justify-items: start;
+  }
+
+  .tasksPage .taskActionBar {
+    justify-content: flex-start;
+  }
+
+  .tasksPage .taskMetaLine span {
+    max-width: 100%;
+  }
+
+  .taskStepMetaGrid,
+  .taskStepSummaryGrid,
+  .taskTokenStats,
+  .taskRawGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Final task step modal polish. Keep this block after legacy/task overrides. */
+.taskStepDetailPanel {
+  width: min(1040px, calc(100vw - 48px));
+  max-height: min(88vh, 860px);
+  padding: 0;
+  overflow: hidden;
+  border-color: rgba(96, 142, 205, 0.42);
+  background:
+    linear-gradient(180deg, rgba(29, 49, 80, 0.72), rgba(14, 27, 45, 0.96) 92px),
+    #0f1c2f;
+}
+
+.taskStepDetailPanel .modalHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px;
+  gap: 16px;
+  align-items: start;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid rgba(104, 151, 213, 0.22);
+}
+
+.taskStepDetailPanel .modalHead > div {
+  min-width: 0;
+  padding-left: 0;
+}
+
+.taskStepDetailPanel .modalHead h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.taskStepDetailPanel .modalHead p {
+  max-width: none;
+  margin: 5px 0 0;
+  overflow: visible;
+  color: var(--text-soft);
+  font-size: 12px;
+  line-height: 1.45;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.taskStepDetailPanel .modalHead .iconButton {
+  justify-self: end;
+}
+
+.taskStepDetailBody {
+  display: grid;
+  gap: 14px;
+  min-height: 0;
+  padding: 16px 20px 20px;
+  overflow: auto;
+  scrollbar-color: rgba(128, 162, 210, 0.58) rgba(7, 17, 31, 0.42);
+  scrollbar-width: thin;
+}
+
+.taskStepDetailBody::-webkit-scrollbar,
+.taskRawGrid pre::-webkit-scrollbar {
+  width: 8px;
+}
+
+.taskStepDetailBody::-webkit-scrollbar-track,
+.taskRawGrid pre::-webkit-scrollbar-track {
+  background: rgba(7, 17, 31, 0.38);
+}
+
+.taskStepDetailBody::-webkit-scrollbar-thumb,
+.taskRawGrid pre::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(128, 162, 210, 0.58);
+}
+
+.taskStepSummaryGrid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.18fr);
+  gap: 14px;
+}
+
+.taskStepDetailBody .taskStepSummaryCard,
+.taskStepDetailBody .taskStepErrorCard,
+.taskStepDetailBody .taskTokenPanel {
+  min-width: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.taskStepDetailBody .taskStepSummaryCard h3,
+.taskStepDetailBody .taskStepErrorCard h3,
+.taskStepDetailBody .taskTokenPanel h3,
+.taskStepDetailBody .taskRawGrid h3 {
+  margin: 0 0 8px;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.taskStepSectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.taskStepSectionHead h3 {
+  margin: 0;
+}
+
+.taskStepSectionHead button {
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid rgba(104, 151, 213, 0.24);
+  border-radius: 7px;
+  color: var(--text-soft);
+  background: rgba(7, 17, 31, 0.26);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.taskStepSectionHead button:hover {
+  color: var(--text);
+  border-color: rgba(104, 151, 213, 0.42);
+}
+
+.taskStepSummaryCard p,
+.taskStepErrorCard p {
+  display: block;
+  min-height: 168px;
+  max-height: none;
+  margin: 0;
+  padding: 10px 12px;
+  overflow: visible;
+  border: 1px solid rgba(104, 151, 213, 0.16);
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: rgba(7, 17, 31, 0.22);
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.taskStepSummaryCard p.isCollapsed {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 12;
+}
+
+.taskStepSummaryCard p.isExpanded {
+  display: block;
+  max-height: min(48vh, 420px);
+  overflow: auto;
+}
+
+.taskTokenPanel {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px !important;
+  border-top: 1px solid rgba(104, 151, 213, 0.16) !important;
+}
+
+.taskTokenPanelHead {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.taskTokenPanelHead h3 {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.taskTokenPanelHead span {
+  min-width: 0;
+  overflow: visible;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  text-align: right;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.taskTokenCallList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 16px;
+  max-height: none;
+  overflow: visible;
+  padding: 0;
+}
+
+.taskTokenCall {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 10px;
+  min-width: 0;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(104, 151, 213, 0.12);
+}
+
+.taskTokenCall span {
+  min-width: 0;
+  overflow: visible;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.taskTokenCall small {
+  min-width: 0;
+  overflow: visible;
+  color: var(--text-soft);
+  font-size: 11px;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.taskTokenCall strong {
+  align-self: center;
+  color: var(--primary);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.taskRawBlock {
+  overflow: hidden;
+  border: 0 !important;
+  border-top: 1px solid rgba(104, 151, 213, 0.18) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.taskRawBlock summary {
+  padding: 11px 0 10px;
+  color: var(--text-soft);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.taskRawGrid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.86fr) minmax(0, 1.14fr);
+  gap: 14px;
+  max-height: min(52vh, 460px);
+  min-height: 300px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.taskRawGrid section {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+}
+
+.taskRawGrid pre {
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  padding: 12px 14px;
+  overflow: auto;
+  border: 1px solid rgba(104, 151, 213, 0.16);
+  border-radius: 8px;
+  color: var(--text-muted);
+  background: rgba(7, 17, 31, 0.24);
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 980px) {
+  .taskStepDetailPanel {
+    width: calc(100vw - 28px);
+  }
+
+  .taskStepDetailPanel .modalHead {
+    grid-template-columns: minmax(0, 1fr) 38px;
+    padding: 16px 16px 12px;
+  }
+
+  .taskStepDetailBody {
+    padding: 14px 16px 18px;
+  }
+
+  .taskStepSummaryGrid,
+  .taskTokenCallList,
+  .taskRawGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .taskRawGrid {
+    max-height: none;
+  }
+}

@@ -1,0 +1,538 @@
+/* Entry assistant page overrides loaded after legacy.css. */
+.entriesPage {
+  gap: 12px;
+}
+
+.entryBridgePanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border-color: rgba(100, 139, 196, 0.3);
+  background:
+    linear-gradient(135deg, rgba(63, 124, 255, 0.14), rgba(16, 28, 46, 0.94)),
+    #101c2e;
+}
+
+.entryBridgeMain {
+  display: flex;
+  min-width: 0;
+  gap: 14px;
+  align-items: center;
+}
+
+.entryBridgeIcon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(126, 164, 232, 0.36);
+  border-radius: 10px;
+  color: #d8e7ff;
+  background: #15243a;
+}
+
+.entryBridgeTitle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.entryBridgeTitle h2 {
+  margin: 0;
+  color: #f5f8ff;
+  font-size: 21px;
+}
+
+.entryBridgeMain p {
+  margin: 7px 0 0;
+  color: #b7c4d8;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.entryBridgeActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.entryDetailsGrid {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+}
+
+.entryMenuPanel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-color: rgba(100, 139, 196, 0.28);
+  background: #101c2e;
+}
+
+.entrySectionHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.entrySectionHead span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #f5f8ff;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.entrySectionHead p {
+  max-width: 760px;
+  margin: 0;
+  color: #9fb0c7;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.entryCommandGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.entryCommandCard {
+  display: grid;
+  gap: 13px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(100, 139, 196, 0.22);
+  border-radius: 8px;
+  background: rgba(8, 21, 37, 0.64);
+}
+
+.entryCommandHead {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.entryCommandHead > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(126, 164, 232, 0.3);
+  border-radius: 8px;
+  color: #91b6ff;
+  background: rgba(63, 124, 255, 0.12);
+}
+
+.entryCommandHead h3 {
+  margin: 0;
+  color: #f5f8ff;
+  font-size: 15px;
+}
+
+.entryCommandHead p {
+  margin: 5px 0 0;
+  color: #9fb0c7;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.entryCommandList {
+  display: grid;
+  gap: 8px;
+}
+
+.entryCommandRow {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.7fr) minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 9px 10px;
+  border: 1px solid rgba(100, 139, 196, 0.16);
+  border-radius: 7px;
+  background: rgba(8, 21, 37, 0.74);
+}
+
+.entryCommandRow code {
+  overflow: hidden;
+  color: #d8e7ff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.entryCommandRow small {
+  color: #9fb0c7;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.entryGuideGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.entryGuideCard {
+  padding: 14px;
+  border-color: rgba(100, 139, 196, 0.25);
+  background: #101c2e;
+}
+
+.entryGuideCard > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #91b6ff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.entryGuideCard ol,
+.entryGuideCard ul {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: #b7c4d8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.entrySourcePanel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-color: rgba(100, 139, 196, 0.28);
+  background: #101c2e;
+}
+
+.entrySourceSummary {
+  display: grid;
+  grid-template-columns: repeat(3, 130px) minmax(160px, auto);
+  gap: 10px;
+  align-items: stretch;
+}
+
+.entrySourceSummary div {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid rgba(100, 139, 196, 0.18);
+  border-radius: 8px;
+  background: rgba(8, 21, 37, 0.7);
+}
+
+.entrySourceSummary strong {
+  color: #f5f8ff;
+  font-size: 20px;
+}
+
+.entrySourceSummary span {
+  color: #9fb0c7;
+  font-size: 12px;
+}
+
+.entrySourceSummary button {
+  justify-self: end;
+  align-self: center;
+}
+
+.entrySourceAdd {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+  padding: 12px;
+  border: 1px solid rgba(100, 139, 196, 0.18);
+  border-radius: 8px;
+  background: rgba(8, 21, 37, 0.62);
+}
+
+.entrySourceAdd label {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.entrySourceAdd span {
+  color: #9fb0c7;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.entrySourceAdd input {
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  padding: 0 11px;
+  border: 1px solid rgba(100, 139, 196, 0.26);
+  border-radius: 8px;
+  outline: none;
+  color: #f5f8ff;
+  background: #081525;
+}
+
+.entrySourceAdd input:focus {
+  border-color: rgba(145, 182, 255, 0.72);
+}
+
+.entrySourceNotice {
+  margin: -4px 0 0;
+  color: #91b6ff;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.entrySourceList {
+  display: grid;
+  gap: 7px;
+}
+
+.entrySourceRow {
+  display: grid;
+  grid-template-columns: minmax(160px, 1.2fr) 72px 70px 82px minmax(180px, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 10px;
+  border: 1px solid rgba(100, 139, 196, 0.16);
+  border-radius: 8px;
+  background: rgba(8, 21, 37, 0.68);
+}
+
+.entrySourceRow div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.entrySourceRow strong,
+.entrySourceRow small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.entrySourceRow strong {
+  color: #f5f8ff;
+  font-size: 13px;
+}
+
+.entrySourceRow small {
+  color: #9fb0c7;
+  font-size: 12px;
+}
+
+.entrySourceDelete {
+  min-height: 30px;
+  padding: 6px 10px;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.entrySourceDelete.isConfirming {
+  border-color: rgba(255, 107, 138, 0.55);
+}
+
+.sourceOk,
+.sourceFail,
+.sourcePending {
+  display: inline-flex;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sourceOk {
+  color: #31d084;
+  background: rgba(49, 208, 132, 0.12);
+}
+
+.sourceFail {
+  color: #ff6b8a;
+  background: rgba(255, 107, 138, 0.12);
+}
+
+.sourcePending {
+  color: #91b6ff;
+  background: rgba(145, 182, 255, 0.12);
+}
+
+.entrySourceChecked {
+  margin: 0;
+  color: #7f91aa;
+  font-size: 12px;
+}
+
+.entryQrPanel {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 16px;
+  border-color: rgba(49, 208, 132, 0.28);
+  background:
+    linear-gradient(135deg, rgba(49, 208, 132, 0.1), rgba(16, 28, 46, 0.96)),
+    #101c2e;
+}
+
+.entryQrCode {
+  display: grid;
+  width: 170px;
+  height: 170px;
+  place-items: center;
+  padding: 10px;
+  border: 1px solid rgba(100, 139, 196, 0.28);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.entryQrCode img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.entryQrCopy span {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  color: #31d084;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.entryQrCopy h2 {
+  margin: 9px 0 8px;
+  color: #f5f8ff;
+  font-size: 20px;
+}
+
+.entryQrCopy p,
+.entryQrCopy small {
+  color: #b7c4d8;
+  line-height: 1.6;
+}
+
+.entryInfoCard,
+.entryLogCard {
+  padding: 14px;
+  border-color: rgba(100, 139, 196, 0.28);
+  background: #101c2e;
+}
+
+.entryInfoCard > span,
+.entryLogCard > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #91b6ff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.entryInfoCard dl {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+}
+
+.entryInfoCard dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(100, 139, 196, 0.18);
+}
+
+.entryInfoCard dl div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.entryInfoCard dt,
+.entryInfoCard dd {
+  margin: 0;
+  font-size: 13px;
+}
+
+.entryInfoCard dt {
+  color: #9fb0c7;
+}
+
+.entryInfoCard dd {
+  max-width: 180px;
+  overflow: hidden;
+  color: #f5f8ff;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.entryLogCard pre,
+.entryLogCard p {
+  margin: 12px 0 0;
+  color: #b7c4d8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.entryLogCard pre {
+  max-height: 260px;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid rgba(100, 139, 196, 0.2);
+  border-radius: 8px;
+  background: #081525;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 1180px) {
+  .entryBridgePanel,
+  .entryQrPanel,
+  .entryDetailsGrid,
+  .entryCommandGrid,
+  .entryGuideGrid,
+  .entrySourceSummary,
+  .entrySourceRow {
+    grid-template-columns: 1fr;
+  }
+
+  .entryBridgeActions {
+    justify-content: flex-start;
+  }
+
+  .entrySectionHead {
+    display: grid;
+  }
+
+  .entrySourceSummary button {
+    justify-self: start;
+  }
+
+  .entrySourceAdd {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .entryCommandRow {
+    grid-template-columns: 1fr;
+  }
+}
