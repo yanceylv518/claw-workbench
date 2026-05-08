@@ -9,7 +9,7 @@ $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
 $outputRoot = Join-Path $root $OutputDir
-$stage = Join-Path $outputRoot "xiaolongxia-local"
+$stage = Join-Path $outputRoot "openclaw-xiaolongxia"
 $cache = Join-Path $root ".packaging-cache"
 $nodeName = "node-v$NodeVersion-win-x64"
 $nodeZip = Join-Path $cache "$nodeName.zip"
@@ -112,7 +112,7 @@ function Write-MigrationLauncher($targetRoot) {
 
 function Write-ProductPackageJson($targetRoot) {
   $packageJson = [ordered]@{
-    name = "xiaolongxia-local"
+    name = "openclaw-xiaolongxia"
     version = $productVersion
     private = $true
     type = "module"
@@ -263,7 +263,7 @@ function Write-PackageManifest($targetRoot, $packageKind) {
     Sort-Object { $_.path }
 
   Write-Utf8NoBomJson (Join-Path $targetRoot "version.json") ([ordered]@{
-    product = "xiaolongxia-local"
+    product = "openclaw-xiaolongxia"
     name = $productNameZh
     version = $version
     packageKind = $packageKind
@@ -271,7 +271,7 @@ function Write-PackageManifest($targetRoot, $packageKind) {
   }) 5
 
   Write-Utf8NoBomJson (Join-Path $targetRoot "manifest.json") ([ordered]@{
-    product = "xiaolongxia-local"
+    product = "openclaw-xiaolongxia"
     version = $version
     packageKind = $packageKind
     builtAt = $builtAt
