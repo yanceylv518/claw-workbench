@@ -341,7 +341,6 @@ try {
 
   Write-ProductPackageJson $stage
   Write-DefaultProductConfigs $stage
-  Copy-Item (Join-Path $root "console-server.mjs") (Join-Path $stage "console-server.mjs") -Force
   Copy-Item (Join-Path $root "xiaohongshu-draft-workflow.mjs") (Join-Path $stage "xiaohongshu-draft-workflow.mjs") -Force
   Copy-Item (Join-Path $root "xiaohongshu-prefill-publish.py") (Join-Path $stage "xiaohongshu-prefill-publish.py") -Force
   Copy-Item (Join-Path $root "prefill-xiaohongshu-publish.ps1") (Join-Path $stage "prefill-xiaohongshu-publish.ps1") -Force

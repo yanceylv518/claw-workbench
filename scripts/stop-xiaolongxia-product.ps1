@@ -4,7 +4,6 @@ $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $escapedRoot = [regex]::Escape($root)
 $patterns = @(
   "apps[/\\]api[/\\]local-server\.mjs",
-  "console-server\.mjs",
   "wechat-direct-bridge\.mjs"
 )
 

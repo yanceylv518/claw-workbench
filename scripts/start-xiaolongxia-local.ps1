@@ -59,13 +59,6 @@ Start-XiaolongxiaProcess `
   -Port 3200
 
 Start-XiaolongxiaProcess `
-  -Name "console-server" `
-  -FilePath $node `
-  -ArgumentList @("console-server.mjs") `
-  -Signature "console-server.mjs" `
-  -Port 3100
-
-Start-XiaolongxiaProcess `
   -Name "web-dev" `
   -FilePath $npm `
   -ArgumentList @("--workspace", "apps/web", "run", "dev", "--", "--host", "127.0.0.1") `

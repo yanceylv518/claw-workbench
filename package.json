@@ -7,7 +7,6 @@
     "packages/*"
   ],
   "scripts": {
-    "console": "node console-server.mjs",
     "api:local": "node apps/api/local-server.mjs",
     "hermes-worker": "node apps/hermes-worker/local-server.mjs",
     "web:dev": "npm --workspace apps/web run dev",

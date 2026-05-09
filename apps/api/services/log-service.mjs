@@ -39,52 +39,7 @@ const LOG_SOURCES = [
     path: path.join(ROOT, ".wechat-direct-bridge", "xiaohongshu-prefill-launch.log"),
     kind: "publisher",
   },
-  {
-    id: "console-server",
-    name: "控制台服务",
-    path: path.join(ROOT, ".wechat-direct-bridge", "console-server.log"),
-    kind: "runtime",
-  },
-  {
-    id: "console-server-error",
-    name: "控制台错误",
-    path: path.join(ROOT, ".wechat-direct-bridge", "console-server.err.log"),
-    kind: "error",
-  },
 ];
-
-function mojibakeScore(text) {
-  const value = String(text || "");
-  const replacement = (value.match(/\uFFFD/g) || []).length * 12;
-  const cyrillic = (value.match(/[\u0400-\u04ff]/g) || []).length * 3;
-  const mojibakePattern = /(?:\u93b6|\u6900|\u572d|\u6d30|\u6d7c|\u6c2c|\u56ad|\u5a86|\u621d|\u7aff|\u951b|\u5c7e|\u935a|\u7ca8|\u7ecb|\u4f7a|\u6d93|\u566a|\u6bb7)/g;
-  const mojibakeFragments = (value.match(mojibakePattern) || []).length * 2;
-  return replacement + cyrillic + mojibakeFragments;
-}
-
-function decodeLineSmart(buffer) {
-  const utf8 = new TextDecoder("utf-8", { fatal: false }).decode(buffer);
-  let gb18030 = utf8;
-  try {
-    gb18030 = new TextDecoder("gb18030", { fatal: false }).decode(buffer);
-  } catch {
-    return utf8;
-  }
-  return mojibakeScore(gb18030) < mojibakeScore(utf8) ? gb18030 : utf8;
-}
-
-function decodeTailBuffer(buffer) {
-  const lines = [];
-  let start = 0;
-  for (let index = 0; index < buffer.length; index += 1) {
-    if (buffer[index] !== 10) continue;
-    const end = index > start && buffer[index - 1] === 13 ? index - 1 : index;
-    lines.push(decodeLineSmart(buffer.subarray(start, end)));
-    start = index + 1;
-  }
-  if (start < buffer.length) lines.push(decodeLineSmart(buffer.subarray(start)));
-  return lines.join("\n");
-}
 
 function readTail(filePath, maxBytes = MAX_TAIL_BYTES) {
   const stat = fs.statSync(filePath);
@@ -93,25 +48,27 @@ function readTail(filePath, maxBytes = MAX_TAIL_BYTES) {
   try {
     const buffer = Buffer.alloc(stat.size - start);
     fs.readSync(fd, buffer, 0, buffer.length, start);
-    return decodeTailBuffer(buffer);
+    return new TextDecoder("utf-8", { fatal: false }).decode(buffer);
   } finally {
     fs.closeSync(fd);
   }
 }
 
 function inferLevel(line) {
-  const upper = String(line || "").toUpperCase();
-  if (/\b(ERROR|ERR|FATAL|FAIL|FAILED)\b/.test(upper) || /异常|失败|错误/.test(line)) return "error";
-  if (/\b(WARN|WARNING)\b/.test(upper) || /警告|超时|timeout/i.test(line)) return "warn";
+  const value = String(line || "");
+  const upper = value.toUpperCase();
+  if (/\b(ERROR|ERR|FATAL|FAIL|FAILED)\b/.test(upper) || /异常|失败|错误/.test(value)) return "error";
+  if (/\b(WARN|WARNING)\b/.test(upper) || /警告|超时|timeout/i.test(value)) return "warn";
   if (/\b(DEBUG|TRACE)\b/.test(upper)) return "debug";
-  if (/\b(INFO|OK|SUCCESS)\b/.test(upper) || /完成|成功|started|running/i.test(line)) return "info";
+  if (/\b(INFO|OK|SUCCESS)\b/.test(upper) || /完成|成功|started|running/i.test(value)) return "info";
   return "default";
 }
 
 function parseTime(line, fallback) {
-  const iso = String(line || "").match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z/);
+  const value = String(line || "");
+  const iso = value.match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z/);
   if (iso) return iso[0];
-  const local = String(line || "").match(/\d{4}[/-]\d{1,2}[/-]\d{1,2}\s+\d{1,2}:\d{2}:\d{2}/);
+  const local = value.match(/\d{4}[/-]\d{1,2}[/-]\d{1,2}\s+\d{1,2}:\d{2}:\d{2}/);
   if (local) {
     const parsed = new Date(local[0].replace(/\//g, "-"));
     if (!Number.isNaN(parsed.getTime())) return parsed.toISOString();
@@ -133,20 +90,8 @@ function compactTracebacks(lines) {
   const compacted = [];
   for (let index = 0; index < lines.length; index += 1) {
     const line = lines[index];
-    if (/^(Browser logs:|Call log:)$/.test(line.trim())) {
-      let cursor = index + 1;
-      let count = 0;
-      for (; cursor < lines.length; cursor += 1) {
-        const next = lines[cursor];
-        if (/^\[\d{4}-\d{2}-\d{2}T/.test(next) || /Traceback \(most recent call last\):/.test(next) || /^[\w.]+(?:Error|Exception):\s+/.test(next)) break;
-        count += 1;
-      }
-      compacted.push(`${line.trim()} 已折叠 ${count} 行浏览器启动细节`);
-      index = cursor - 1;
-      continue;
-    }
     if (!/Traceback \(most recent call last\):/.test(line)) {
-      compacted.push(line);
+      if (!isTracebackNoise(line)) compacted.push(line);
       continue;
     }
 
@@ -156,7 +101,7 @@ function compactTracebacks(lines) {
       const next = lines[cursor];
       if (/^\[\d{4}-\d{2}-\d{2}T/.test(next) && !/Traceback \(most recent call last\):/.test(next)) break;
       block.push(next);
-      if (/^[\w.]+(?:Error|Exception):\s+/.test(next)) {
+      if (/^[\w.]+(?:Error|Exception):\s+/.test(next.trim())) {
         cursor += 1;
         break;
       }
@@ -165,24 +110,29 @@ function compactTracebacks(lines) {
 
     const errorLine = [...block].reverse().find((item) => /^[\w.]+(?:Error|Exception):\s+/.test(item.trim()));
     const appFrame = block.find((item) => /D:[\\/].*openclaw.*\.py", line \d+/i.test(item));
-    const errorText = errorLine ? errorLine.trim() : "Python traceback";
-    const frameText = appFrame ? appFrame.trim().replace(/^File\s+/, "File ") : "";
-    compacted.push([errorText, frameText ? `位置：${frameText}` : "", `堆栈已折叠 ${block.length} 行`].filter(Boolean).join(" | "));
+    compacted.push([
+      errorLine ? errorLine.trim() : "Python traceback",
+      appFrame ? `位置：${appFrame.trim().replace(/^File\s+/, "File ")}` : "",
+      `堆栈已折叠 ${block.length} 行`,
+    ].filter(Boolean).join(" | "));
   }
-  return compacted.filter((line) => !isTracebackNoise(line));
+  return compacted;
 }
 
 function normalizeLines(text, source, fallbackTime) {
-  const compactedLines = compactTracebacks(String(text || "")
-    .split(/\r?\n/)
-    .map((line) => line.trimEnd())
-    .filter(Boolean)
-    .slice(-900));
-  return compactedLines
-    .slice(-700)
-    .map((line, index) => {
-      const message = line.length > MAX_LINE_CHARS ? `${line.slice(0, MAX_LINE_CHARS)} ...（已截断 ${line.length - MAX_LINE_CHARS} 字）` : line;
-      return ({
+  const compactedLines = compactTracebacks(
+    String(text || "")
+      .split(/\r?\n/)
+      .map((line) => line.trimEnd())
+      .filter(Boolean)
+      .slice(-900),
+  );
+
+  return compactedLines.slice(-700).map((line, index) => {
+    const message = line.length > MAX_LINE_CHARS
+      ? `${line.slice(0, MAX_LINE_CHARS)} ...（已截断 ${line.length - MAX_LINE_CHARS} 字）`
+      : line;
+    return {
       id: `${source.id}-${index}`,
       sourceId: source.id,
       sourceName: source.name,
@@ -190,8 +140,8 @@ function normalizeLines(text, source, fallbackTime) {
       level: inferLevel(message),
       time: parseTime(message, fallbackTime),
       message,
-    });
-    });
+    };
+  });
 }
 
 function readSource(source) {
@@ -204,6 +154,7 @@ function readSource(source) {
       lines: [],
     };
   }
+
   const stat = fs.statSync(source.path);
   const updatedAt = stat.mtime.toISOString();
   const text = stat.size > 0 ? readTail(source.path) : "";
@@ -235,6 +186,7 @@ export function getSystemLogs() {
     .flatMap((source) => source.lines.slice(0, MAX_LINES_PER_SOURCE))
     .sort((a, b) => String(b.time || "").localeCompare(String(a.time || "")))
     .slice(0, MAX_TOTAL_LINES);
+
   return {
     ok: true,
     updatedAt: new Date().toISOString(),

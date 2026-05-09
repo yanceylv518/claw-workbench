@@ -113,7 +113,6 @@ Initialize-ProductConfigs
 $url = "http://127.0.0.1:$($env:XIAOLONGXIA_LOCAL_API_PORT)/"
 $healthUrl = "http://127.0.0.1:$($env:XIAOLONGXIA_LOCAL_API_PORT)/api/local/health"
 $escapedRoot = [regex]::Escape($root)
-$consolePort = if ($env:XLX_CONSOLE_PORT) { $env:XLX_CONSOLE_PORT } else { "3100" }
 
 function Get-PortListenerProcessIds {
   try {
@@ -155,31 +154,9 @@ function Get-CurrentApiProcess {
   return $null
 }
 
-function Get-CurrentConsoleProcess {
-  Get-CimInstance Win32_Process |
-    Where-Object {
-      $_.Name -match "^node(\.exe)?$" -and
-      $_.CommandLine -and
-      $_.CommandLine -match "console-server\.mjs" -and
-      (Test-IsCurrentFolderProcess $_)
-    } |
-    Select-Object -First 1
-}
-
-function Start-ConsoleServerIfNeeded {
-  if (Get-CurrentConsoleProcess) { return }
-  Start-Process `
-    -FilePath $node `
-    -ArgumentList @("console-server.mjs") `
-    -WorkingDirectory $root `
-    -WindowStyle Hidden
-  Start-Sleep -Milliseconds 800
-}
-
 function Stop-ExistingXiaolongxia {
   $patterns = @(
     "apps[/\\]api[/\\]local-server\.mjs",
-    "console-server\.mjs",
     "wechat-direct-bridge\.mjs"
   )
   $processes = @(Get-CimInstance Win32_Process |
@@ -207,7 +184,6 @@ function Stop-ExistingXiaolongxia {
 
 $currentApi = Get-CurrentApiProcess
 if ($currentApi -and (Test-XiaolongxiaHealth)) {
-  Start-ConsoleServerIfNeeded
   if (-not $env:XIAOLONGXIA_NO_OPEN) {
     Start-Process $url
   }
@@ -228,8 +204,6 @@ Start-Process `
   -WorkingDirectory $root `
   -WindowStyle Hidden
 
-Start-ConsoleServerIfNeeded
-
 Start-Sleep -Seconds 2
 try {
   Invoke-WebRequest -UseBasicParsing $healthUrl -TimeoutSec 8 | Out-Null
@@ -237,7 +211,6 @@ try {
     Start-Process $url
   }
   Write-Host "Xiaolongxia started: $url"
-  Write-Host "Console adapter started: http://127.0.0.1:$consolePort/"
 } catch {
   Write-Host "Xiaolongxia API did not become ready. See logs in $logDir"
   throw
